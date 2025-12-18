@@ -1,14 +1,16 @@
 import "./App.css";
-import Pagingation from "./components/Pagination/Pagination";
-import TodoWrapper from "./components/Todo/TodoWrapper";
-import Wrapper from "./context/Wrapper";
+// import Pagingation from "./components/Pagination/Pagination";
+import ProgressWrapper from "./components/ProgressBar/ProgressWrapper";
+// import TodoWrapper from "./components/Todo/TodoWrapper";
+// import Wrapper from "./context/Wrapper";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       {/* <Pagingation /> */}
       {/* <Wrapper /> */}
-      <TodoWrapper />
+      {/* <TodoWrapper /> */}
+      <ProgressWrapper />
     </div>
   );
 }

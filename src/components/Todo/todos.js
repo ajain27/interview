@@ -1,17 +1,15 @@
 import { useState } from "react";
 import "./style.css";
 
-function Todos({ task, toggleTask }) {
-  const [completed, setcompleted] = useState(false);
-
+function Todos({ task, toggleTask, deleteTodo, editTodo }) {
   return (
     <div>
-      <p
-        className={`${task.completed ? "completed" : ""}`}
-        onClick={() => toggleTask(task.id)}
-      >
+      <span className={`${task.completed ? "completed" : ""}`}>
         {task.task}
-      </p>
+      </span>
+      <button onClick={() => toggleTask(task.id)}>Done</button>
+      <button onClick={() => editTodo(task.id)}>Edit</button>
+      <button onClick={() => deleteTodo(task.id)}>Delete</button>
     </div>
   );
 }

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 
-function TodoForm({ addTodo }) {
-  const [value, setvalue] = useState();
+function EditTodo({ editTodo, task }) {
+  const [value, setvalue] = useState(task.task);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (value) {
-      addTodo(value);
-    }
+    editTodo(value, task.id);
     setvalue("");
   };
 
@@ -16,13 +14,13 @@ function TodoForm({ addTodo }) {
       <input
         type="text"
         id="name"
-        name="addTodo"
+        name="editTodo"
         value={value}
         onChange={(e) => setvalue(e.target.value)}
       ></input>
-      <button type="submit">Add todo!</button>
+      <button type="submit">update todo!</button>
     </form>
   );
 }
 
-export default TodoForm;
+export default EditTodo;
