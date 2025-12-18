@@ -1,0 +1,9 @@
+.todo_wrapper{
+    height: 250px;
+    border: 1px solid red;
+    justify-content: center;
+}
+
+.completed {
+    text-decoration: line-through
+}
