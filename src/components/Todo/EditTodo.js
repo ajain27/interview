@@ -18,7 +18,7 @@ function EditTodo({ editTodo, task }) {
         value={value}
         onChange={(e) => setvalue(e.target.value)}
       ></input>
-      <button type="submit">update todo!</button>
+      <button type="submit">Update todo!</button>
     </form>
   );
 }

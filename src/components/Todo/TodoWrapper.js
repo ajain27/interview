@@ -26,7 +26,6 @@ function TodoWrapper() {
   };
 
   const deleteTodo = (id) => {
-    console.log("deleted");
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
