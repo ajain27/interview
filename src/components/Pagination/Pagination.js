@@ -51,7 +51,7 @@ function Pagingation() {
             className={page > 1 ? "" : "disabled"}
             onClick={() => selectPageHandler(page - 1)}
           >
-            left
+            -
           </span>
           {[...Array(Math.round(totalPages))].map((_, i) => {
             return (
@@ -68,7 +68,7 @@ function Pagingation() {
             onClick={() => selectPageHandler(page + 1)}
             className={page < Math.round(totalPages) ? " " : "disabled"}
           >
-            right
+            +
           </span>
         </div>
       )}
