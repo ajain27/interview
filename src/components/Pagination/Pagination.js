@@ -6,18 +6,17 @@ function Pagingation() {
   const [page, setPages] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
-  const geProducts = async () => {
-    const response = await fetch(
-      `https://dummyjson.com/products?limit=20&skip=${page * 20 - 20}`
-    );
-    const products = await response.json();
-    if (products && products.products) {
-      setProducts(products.products);
-      setTotalPages(products.total / 20);
-    }
-  };
-
   useEffect(() => {
+    const geProducts = async () => {
+      const response = await fetch(
+        `https://dummyjson.com/products?limit=20&skip=${page * 20 - 20}`
+      );
+      const products = await response.json();
+      if (products && products.products) {
+        setProducts(products.products);
+        setTotalPages(products.total / 20);
+      }
+    };
     geProducts();
   }, [page]);
 
