@@ -73,7 +73,7 @@ const logoutUser = async (req, res) => {
       email,
     });
 
-    if (!user) return res.status(404).json({ message: "user nt found" });
+    if (!user) return res.status(404).json({ message: "user not found" });
 
     return res.status(200).json({ message: "logout successful" });
   } catch (error) {

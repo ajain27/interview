@@ -1,3 +1,4 @@
+// connects to the database created in mongoose atlas
 import mongoose from "mongoose";
 
 const connectDB = async () => {

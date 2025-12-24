@@ -3,12 +3,14 @@ import "./App.css";
 // import ProgressWrapper from "./components/ProgressBar/ProgressWrapper";
 // import TodoWrapper from "./components/Todo/TodoWrapper";
 // import Wrapper from "./context/Wrapper";
-import Tabs from "./components/Tabs/Tabs";
+// import Tabs from "./components/Tabs/Tabs";
+import Calculator from "./components/Calculator/Calculator";
 
 function App() {
   return (
     <div className="app">
-      <Tabs />
+      <Calculator />
+      {/* <Tabs /> */}
       {/* <Pagingation /> */}
       {/* <Wrapper /> */}
       {/* <TodoWrapper /> */}
