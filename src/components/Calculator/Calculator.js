@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use strict";
+import { useState } from "react";
 import "./Calculator.css";
 
 function Calculator() {
@@ -6,6 +7,11 @@ function Calculator() {
   const [result, setResult] = useState("");
 
   const ops = ["/", "*", "+", "-"];
+
+  function safeEvalMath(expr) {
+    const cleaned = expr.replace(/\b0+(\d+)/g, "$1");
+    return Function(`"use strict"; return (${cleaned})`)();
+  }
 
   const updateCalc = (value) => {
     if (
@@ -17,12 +23,12 @@ function Calculator() {
 
     setCalc(calc + value);
     if (!ops.includes(value)) {
-      setResult(eval(calc + value).toString());
+      setResult(safeEvalMath(calc + value).toString());
     }
   };
 
   const calculate = () => {
-    setCalc(eval(calc).toString());
+    setCalc(safeEvalMath(calc).toString());
   };
 
   const AC = () => {
@@ -31,7 +37,6 @@ function Calculator() {
   };
 
   const handleDelete = () => {
-    console.log("delete");
     if (calc === "") {
       return;
     }
@@ -44,7 +49,7 @@ function Calculator() {
     const digits = [];
     for (let index = 1; index < 10; index++) {
       digits.push(
-        <button onClick={() => updateCalc(index.toString())} key={index}>
+        <button onClick={() => updateCalc(parseInt(index))} key={index}>
           {index}
         </button>
       );
