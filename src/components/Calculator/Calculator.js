@@ -8,10 +8,10 @@ function Calculator() {
 
   const ops = ["/", "*", "+", "-"];
 
-  function safeEvalMath(expr) {
-    const cleaned = expr.replace(/\b0+(\d+)/g, "$1");
-    return Function(`"use strict"; return (${cleaned})`)();
-  }
+  // function safeEvalMath(expr) {
+  //   const cleaned = expr.replace(/\b0+(\d+)/g, "$1");
+  //   return Function(`"use strict"; return (${cleaned})`)();
+  // }
 
   const updateCalc = (value) => {
     if (
@@ -23,12 +23,12 @@ function Calculator() {
 
     setCalc(calc + value);
     if (!ops.includes(value)) {
-      setResult(safeEvalMath(calc + value).toString());
+      setResult(eval(calc + value).toString());
     }
   };
 
   const calculate = () => {
-    setCalc(safeEvalMath(calc).toString());
+    setCalc(eval(calc).toString());
   };
 
   const AC = () => {
