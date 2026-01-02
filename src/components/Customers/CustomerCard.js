@@ -2,28 +2,30 @@ import React, { useEffect, useState } from "react";
 
 import "./customer.css";
 
-function CustomerCard(customers) {
-  const [customerData, setCustomerData] = useState(customers);
+function CustomerCard({ customer, editCustomer }) {
+  const [customerData, setCustomerData] = useState(customer);
 
   useEffect(() => {
-    setCustomerData(customers);
-    console.log("customerData", customerData.customers);
-  }, [customers]);
+    setCustomerData(customer);
+  }, [customer]);
 
   return (
     <>
-      {customerData.customers.map((customer) => (
-        <div className="card custom-card">
-          <div className="card-body">
-            <h5 className="card-title">{customer.name}</h5>
-            <p className="card-text">{customer.email}</p>
-            <p className="card-text">{customer.phone}</p>
-          </div>
-          <div className="edit">
-            <button className="edit-btn">Edit</button>
-          </div>
+      <div className="card custom-card">
+        <div className="card-body">
+          <h5 className="card-title">{customerData.name}</h5>
+          <p className="card-text">{customerData.email}</p>
+          <p className="card-text">{customerData.phone}</p>
         </div>
-      ))}
+        <div className="edit">
+          <button
+            className="edit-btn"
+            onClick={() => editCustomer(customerData.id)}
+          >
+            Edit
+          </button>
+        </div>
+      </div>
     </>
   );
 }

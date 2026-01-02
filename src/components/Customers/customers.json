@@ -4,20 +4,23 @@
     "name": "John",
     "age": 30,
     "email": "test1@test.com",
-    "phone": "206-822-8019"
+    "phone": "206-822-8019",
+    "isEdited": false
   },
   {
     "id": 2,
     "name": "Michael",
     "age": 30,
     "email": "test2@test.com",
-    "phone": "206-822-8019"
+    "phone": "206-822-8019",
+    "isEdited": false
   },
   {
     "id": 3,
     "name": "Martin",
     "age": 30,
     "email": "test3@test.com",
-    "phone": "206-822-8019"
+    "phone": "206-822-8019",
+    "isEdited": false
   }
 ]
