@@ -7,21 +7,21 @@ const pallindrome = (num) => {
 
 console.log(pallindrome(1221));
 
-// function isPalindromeLoop(str) {
-//   const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
-//   let left = 0;
-//   let right = cleanStr.length - 1;
+function isPalindromeLoop(str) {
+  const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  let left = 0;
+  let right = cleanStr.length - 1;
 
-//   while (left < right) {
-//     if (cleanStr[left] !== cleanStr[right]) {
-//       return false; // Characters do not match, not a palindrome
-//     }
-//     left++;
-//     right--;
-//   }
+  while (left < right) {
+    if (cleanStr[left] !== cleanStr[right]) {
+      return false; // Characters do not match, not a palindrome
+    }
+    left++;
+    right--;
+  }
 
-//   return true; // All characters matched, it is a palindrome
-// }
+  return true; // All characters matched, it is a palindrome
+}
 
 // // Examples:
 // console.log(isPalindromeLoop("madam")); // Output: true

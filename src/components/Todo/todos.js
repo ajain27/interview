@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./style.css";
 
 function Todos({ task, toggleTask, deleteTodo, editTodo }) {
