@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function EditCustomer({ currentCustomer, updateCustomer }) {
   const [formData, setFormData] = useState(currentCustomer);
-
-  useEffect(() => {
-    setFormData(currentCustomer);
-    console.log("formData in use effect", formData);
-  }, [currentCustomer]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

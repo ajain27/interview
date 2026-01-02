@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import "./customer.css";
 
-function CustomerCard({ customer, editCustomer }) {
+function CustomerCard({ customer, editCustomer, deleteCustomer }) {
   const [customerData, setCustomerData] = useState(customer);
 
   useEffect(() => {
@@ -23,6 +23,12 @@ function CustomerCard({ customer, editCustomer }) {
             onClick={() => editCustomer(customerData.id)}
           >
             Edit
+          </button>
+          <button
+            className="delete-btn"
+            onClick={() => deleteCustomer(customerData.id)}
+          >
+            Delete
           </button>
         </div>
       </div>

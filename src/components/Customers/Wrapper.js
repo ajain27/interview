@@ -37,6 +37,10 @@ function Wrapper() {
     );
   };
 
+  const deleteCustomer = (id) => {
+    setCustomers(customers.filter((cx) => cx.id !== id));
+  };
+
   return (
     <div>
       <AddCustomer onAdd={onAdd} />
@@ -53,6 +57,7 @@ function Wrapper() {
               customer={customer}
               key={customer.id}
               editCustomer={onEdit}
+              deleteCustomer={deleteCustomer}
             />
           )
         )}
