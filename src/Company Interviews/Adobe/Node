@@ -1,0 +1,70 @@
+// Directory listing
+//   takes tha path as input and returns the filr tree
+
+//     {
+//         fileName: path.basename(inputPath),
+//         filePath: inputPath,
+//         size: stats.size,
+//         createdAt: formatDate(stats.birthtime),
+//         isDirectory: false
+//       }
+
+const fs = require("fs").promises;
+const path = require("path");
+
+function formatDate(date) {
+  const d = new Date(date);
+  const day = String(d.getUTCDate()).padStart(2, "0");
+  const month = String(d.getUTCMonth() + 1).padStart(2, "0");
+  const year = d.getUTCFullYear();
+  return `${day}-${month}-${year}`;
+}
+
+const main = async (inputPath) => {
+  let stats;
+
+  try {
+    stats = await fs.stat(inputPath);
+  } catch {
+    throw new Error("Invalid Path");
+  }
+
+  // ✅ FILE
+  if (stats.isFile()) {
+    return [
+      {
+        fileName: path.basename(inputPath),
+        filePath: inputPath,
+        size: stats.size,
+        createdAt: formatDate(stats.birthtime),
+        isDirectory: false,
+      },
+    ];
+  }
+
+  // ✅ DIRECTORY
+  if (stats.isDirectory()) {
+    const files = await fs.readdir(inputPath);
+
+    const results = await Promise.all(
+      files.map(async (file) => {
+        const fullPath = path.join(inputPath, file);
+        const fileStats = await fs.stat(fullPath);
+
+        return {
+          fileName: file,
+          filePath: fullPath,
+          size: fileStats.isDirectory() ? 0 : fileStats.size,
+          createdAt: formatDate(fileStats.birthtime),
+          isDirectory: fileStats.isDirectory(),
+        };
+      })
+    );
+
+    return results;
+  }
+
+  throw new Error("Invalid Path");
+};
+
+module.exports = main;

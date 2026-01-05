@@ -44,7 +44,6 @@ function Wrapper() {
   return (
     <div>
       <AddCustomer onAdd={onAdd} />
-
       {customers &&
         customers.map((customer) =>
           customer.isEdited ? (
