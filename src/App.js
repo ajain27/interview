@@ -1,5 +1,6 @@
 import "./App.css";
-import Wrapper from "./components/react/Customers/Wrapper";
+import Accordion from "./components/react/Accordion/Accordion";
+// import Wrapper from "./components/react/Customers/Wrapper";
 // import Pagingation from "./components/Pagination/Pagination";
 // import ProgressWrapper from "./components/ProgressBar/ProgressWrapper";
 // import TodoWrapper from "./components/Todo/TodoWrapper";
@@ -10,7 +11,8 @@ import Wrapper from "./components/react/Customers/Wrapper";
 function App() {
   return (
     <div className="app">
-      <Wrapper />
+      <Accordion />
+      {/* <Wrapper /> */}
       {/* <Calculator /> */}
       {/* <Tabs /> */}
       {/* <Pagingation /> */}

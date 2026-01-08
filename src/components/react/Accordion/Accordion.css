@@ -1,0 +1,36 @@
+.accordion-wrapper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion {
+  width: 540px;
+}
+
+.title {
+  background-color: #ccc;
+  padding-bottom: 15px;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  justify-content: center;
+  text-align: left;
+  margin: 15px;
+  transition: 0.4s;
+}
+
+.content.show {
+  height: auto;
+  max-height: 9999px;
+  transition: 4s;
+}

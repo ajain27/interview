@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "What is Lorem Ipsum?",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": 2,
+    "title": "Why use an accordion?",
+    "content": "Accordions help organize large amounts of content into manageable sections, improving user experience by allowing users to focus on one topic at a time and reducing page clutter, ideal for FAQs or product features."
+  },
+  {
+    "id": 3,
+    "title": "How do I add more items?",
+    "content": "To add more items, simply add another object to the data array, following the same structure with a unique ID, a title, and its corresponding content."
+  }
+]
