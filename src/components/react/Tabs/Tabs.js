@@ -17,12 +17,11 @@ function Tabs() {
   return (
     <div className="tabs-wrapper">
       {tabsData.map((tab) => (
-        <span
-          className="tabs"
-          key={tab.id}
-          onClick={() => handleActive(tab.id)}
-        >
-          <button className={isActive === tab.id ? "active" : ""}>
+        <span className="tabs" key={tab.id}>
+          <button
+            className={isActive === tab.id ? "active" : ""}
+            onClick={() => handleActive(tab.id)}
+          >
             {tab.label}
           </button>
           {isActive === tab.id && <div className="content">{tab.content}</div>}
