@@ -1,17 +1,10 @@
-// import Accordion from "./components/react/Accordion/Accordion";
-// import Wrapper from "./components/react/Customers/Wrapper";
-// import Pagingation from "./components/Pagination/Pagination";
-// import ProgressWrapper from "./components/ProgressBar/ProgressWrapper";
-// import TodoWrapper from "./components/Todo/TodoWrapper";
-// import Wrapper from "./context/Wrapper";
-// import Calculator from "./components/Calculator/Calculator";
 import "./App.css";
-import AutoCompleteSearch from "./components/react/Search/Search";
-import Tabs from "./components/react/Tabs/Tabs";
+import TicTacToe from "./Companies/Microsoft/react/TicTacToe/TicTacToe.js";
 
 function App() {
   return (
     <div className="app">
+      <TicTacToe />
       {/* <Accordion /> */}
       {/* <Wrapper /> */}
       {/* <Calculator /> */}
@@ -20,7 +13,7 @@ function App() {
       {/* <Wrapper /> */}
       {/* <TodoWrapper /> */}
       {/* <ProgressWrapper /> */}
-      <AutoCompleteSearch />
+      {/* <AutoCompleteSearch /> */}
     </div>
   );
 }

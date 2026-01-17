@@ -1,5 +1,3 @@
-import React from "react";
-
 function AccordionItem({ selected, toggle, i, item }) {
   return (
     <div>
