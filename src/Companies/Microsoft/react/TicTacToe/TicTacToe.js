@@ -15,8 +15,8 @@ function TicTacToe() {
       <div className="board">
         {board.map((b, index) => (
           <button
-            className="cell"
             key={index}
+            className="cell"
             onClick={() => handleClick(index)}
             disable={b !== null}
           >

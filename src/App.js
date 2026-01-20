@@ -1,10 +1,12 @@
 import "./App.css";
-import TicTacToe from "./Companies/Microsoft/react/TicTacToe/TicTacToe.js";
+// import TicTacToe from "./Companies/Microsoft/react/TicTacToe/TicTacToe.js";
+import TTT from "./practice/tictactoe/TTT.js";
 
 function App() {
   return (
     <div className="app">
-      <TicTacToe />
+      <TTT />
+      {/* <TicTacToe /> */}
       {/* <Accordion /> */}
       {/* <Wrapper /> */}
       {/* <Calculator /> */}

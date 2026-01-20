@@ -2,8 +2,8 @@ import { useState } from "react";
 
 const initialBoard = () => Array(9).fill(null);
 
-const useTicTactoe = () => {
-  const [board, setBoard] = useState(initialBoard());
+function useTicTacToe() {
+  const [board, setBoard] = useState(initialBoard);
   const [isNextX, setIsNextX] = useState(true);
 
   const WINNING_PATTERNS = [
@@ -40,19 +40,19 @@ const useTicTactoe = () => {
     setIsNextX(!isNextX);
   };
 
-  const getStatusMessage = () => {
-    const winner = calculateWinner(board);
-    if (winner) return `Player ${winner} Wins 🏆`;
-    if (!board.includes(null)) return `Its a Draw 😐`;
-    return `Player ${isNextX ? "X" : "O"} turn`;
-  };
-
   const resetGame = () => {
     setBoard(initialBoard);
     setIsNextX(true);
   };
 
-  return { board, handleClick, getStatusMessage, resetGame };
-};
+  const getStatusMessage = () => {
+    const winner = calculateWinner(board);
+    if (winner) return `Please ${winner} Wins`;
+    if (!board.includes(null)) return `its a draw`;
+    return `Plater ${isNextX ? "X" : `O`} turn`;
+  };
 
-export default useTicTactoe;
+  return { board, handleClick, resetGame, getStatusMessage };
+}
+
+export default useTicTacToe;
