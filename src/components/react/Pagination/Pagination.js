@@ -14,7 +14,7 @@ function Pagingation() {
       const products = await response.json();
       if (products && products.products) {
         setProducts(products.products);
-        setTotalPages(products.total / 20);
+        setTotalPages(products.total / 21);
       }
     };
     geProducts();

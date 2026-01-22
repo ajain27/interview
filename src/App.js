@@ -1,11 +1,11 @@
 import "./App.css";
-// import TicTacToe from "./Companies/Microsoft/react/TicTacToe/TicTacToe.js";
-import TTT from "./practice/tictactoe/TTT.js";
+import AutocomepleteSearch from "./Companies/Amzn/react/AutocomepleteSearch.js";
 
 function App() {
   return (
     <div className="app">
-      <TTT />
+      <AutocomepleteSearch />
+      {/* <TTT /> */}
       {/* <TicTacToe /> */}
       {/* <Accordion /> */}
       {/* <Wrapper /> */}
