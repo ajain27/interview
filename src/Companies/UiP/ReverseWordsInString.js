@@ -1,14 +1,13 @@
 function reverseWords(str) {
-  let reveredWord = [];
+  let reversedWord = [];
   let spaceSeparatedWords = str.split(" ");
 
   for (let i = spaceSeparatedWords.length - 1; i >= 0; i--) {
     if (spaceSeparatedWords[i].charAt(" ")) {
-      reveredWord.push(spaceSeparatedWords[i]);
+      reversedWord.push(spaceSeparatedWords[i]);
     }
   }
-
-  return reveredWord.join(" ").trim();
+  return reversedWord.join(" ").trim();
 }
 
 console.log(reverseWords("uipath"));

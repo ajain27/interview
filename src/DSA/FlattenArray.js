@@ -52,12 +52,12 @@ function flatten(arr) {
   return result;
 }
 
-export default function deepFlattenArray(arr) {
-  return arr.reduce((accumulator, currentValue) => {
-    return accumulator.concat(
-      Array.isArray(currentValue)
-        ? deepFlattenArray(currentValue)
-        : currentValue
-    );
-  }, []);
-}
+// export default function deepFlattenArray(arr) {
+//   return arr.reduce((accumulator, currentValue) => {
+//     return accumulator.concat(
+//       Array.isArray(currentValue)
+//         ? deepFlattenArray(currentValue)
+//         : currentValue
+//     );
+//   }, []);
+// }

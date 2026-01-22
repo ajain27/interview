@@ -10,7 +10,7 @@ function rob(nums) {
   for (let i = 2; i < nums.length; i++) {
     runningTotal[i] = Math.max(
       runningTotal[i - 1],
-      runningTotal[i - 2] + nums[i]
+      runningTotal[i - 2] + nums[i],
     );
   }
 
@@ -18,3 +18,5 @@ function rob(nums) {
 }
 
 console.log(rob([2, 7, 9, 3, 1]));
+
+// const houses = [🏠, 🏠, 🏠, 🏠, 🏠, 🏠 ,🏠]
