@@ -1,10 +1,12 @@
 import "./App.css";
-import AutocomepleteSearch from "./Companies/Amzn/react/AutocomepleteSearch.js";
+// import AutocomepleteSearch from "./Companies/Amzn/react/AutocomepleteSearch.js";
+import Calender from "./Companies/UiP/react/Calender.js";
 
 function App() {
   return (
     <div className="app">
-      <AutocomepleteSearch />
+      <Calender />
+      {/* <AutocomepleteSearch /> */}
       {/* <TTT /> */}
       {/* <TicTacToe /> */}
       {/* <Accordion /> */}
