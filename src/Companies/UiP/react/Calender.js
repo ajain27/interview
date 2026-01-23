@@ -4,9 +4,11 @@ import "./style.css";
 function Calender() {
   const initialPublicHolidays = ["Jan 1", "Apr 30"];
 
-  const [publicHolidays] = useState(initialPublicHolidays);
+  const [publicHolidays, setPublicHolidays] = useState(initialPublicHolidays);
   const [datesInMonth, setDatesInMonth] = useState([]);
   const [selectedMonth, setSelectedMonth] = useState("Jan");
+  const [dateForPH, setDayForPh] = useState("");
+  const [monthForPH, setMonthForPH] = useState("");
 
   const generateDays = (days) => {
     const dates = [];
@@ -43,6 +45,13 @@ function Calender() {
     } else {
       generateDays(30);
     }
+  };
+
+  const handleAddPublicHoliday = () => {
+    if (!monthForPH || !dateForPH) return;
+    setPublicHolidays((prev) => [...prev, `${monthForPH} ${dateForPH}`]);
+    setMonthForPH("");
+    setDayForPh("");
   };
 
   useEffect(() => {
@@ -90,6 +99,35 @@ function Calender() {
             </div>
           ))}
         </ol>
+      </div>
+      <div className="add-holiday">
+        <h3>Add Public Holiday</h3>
+
+        <div className="holiday-inputs">
+          <input
+            type="text"
+            value={monthForPH}
+            placeholder="Month (e.g. Jan)"
+            onChange={(e) => setMonthForPH(e.target.value)}
+          />
+
+          <input
+            type="number"
+            placeholder="Day (e.g. 1)"
+            min="1"
+            max="31"
+            value={dateForPH}
+            onChange={(e) => setDayForPh(e.target.value)}
+          />
+        </div>
+
+        <button
+          type="button"
+          className="add-btn"
+          onClick={handleAddPublicHoliday}
+        >
+          Add Public Holiday
+        </button>
       </div>
     </div>
   );

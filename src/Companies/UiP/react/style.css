@@ -68,3 +68,55 @@
   color: #c62828;
   font-weight: 600;
 }
+
+.add-holiday {
+  max-width: 320px;
+  margin: 24px auto;
+  padding: 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: system-ui, sans-serif;
+}
+
+.add-holiday h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.holiday-inputs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.holiday-inputs input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.holiday-inputs input:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-btn:hover {
+  background: #1565c0;
+}
