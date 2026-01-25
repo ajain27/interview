@@ -1,6 +1,6 @@
 import "./App.css";
 // import AutocomepleteSearch from "./Companies/Amzn/react/AutocomepleteSearch.js";
-import Calender from "./Companies/UiP/react/Calender.js";
+import Calender from "./companies/UiP/react/Calender.js";
 
 function App() {
   return (
